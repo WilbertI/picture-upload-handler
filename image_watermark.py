@@ -5,6 +5,7 @@ def generate_layer(repeat = True, transparency = 75, offset = (0, 0), boundary =
     layer = Image.new('RGBA', (1000, 100), (255, 255, 255, 0)) #Add dimensions
     maxx, maxy = layer.size
 
+    # Add boundary to watermark
     if boundary:
         d_boundary = ImageDraw.Draw(layer)
         d_boundary.line([(0,0), (maxx,0), (maxx, maxy), (0, maxy), (0,0)], fill=(0, 0, 0), width = 5)
@@ -23,17 +24,4 @@ def generate_layer(repeat = True, transparency = 75, offset = (0, 0), boundary =
     #for x,y in ?
     #    drawn.alpha_composite(i, dest = (x * size, y * size))
 
-    # Debug
-    drawn.show() #Full Watermark
-
     return layer
-
-
-# Text (Generated from Value) or Image (Provided)
-# Repeat in Pattern or Single Instance
-#
-#
-#
-#
-#
-#
